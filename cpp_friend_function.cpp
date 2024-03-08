@@ -1,7 +1,7 @@
     #include<iostream>
     using namespace std;
 
-/******* First Example *********/
+/******* Example 1 *********/
 
     // class Complex{
     //     int a,b;
@@ -32,7 +32,7 @@
     //     return 0;
     // }
 
-/********* Second Example ********/
+/********* Example 2 ********/
 
 // class Complex; // Forward Declaration
 // class calculator{
@@ -75,3 +75,82 @@
 
 // }
 
+/******** Example 3 ************/
+
+// class Y;
+// class X{
+//     int a;
+//     public:
+//         void setValue(int x){
+//             a = x;
+//         }
+//         friend void add_sum(X , Y);
+// };
+// class Y{
+//     int b;
+//     public:
+//         void setValue(int y){
+//             b = y;
+//         }
+//         friend void add_sum(X, Y);
+// };
+
+
+// void add_sum(X o1, Y o2){
+//     cout<<"the sum is: "<<(o1.a + o2.b)<<endl;
+// }
+// int main(){
+//     X a1;
+//     a1.setValue(5);
+//     Y a2;
+//     a2.setValue(10);
+//     add_sum(a1,a2);
+//     return 0;
+// }
+
+/********* Example 4 ***********/
+
+class B;
+class A{
+    int a1;
+    public:
+        void setValue(int x){
+            a1 = x;
+        }
+        void display(){
+            cout<<"the value of a1 is:  "<<a1<<endl;
+        }
+        friend void swap_value(A & ,B &);
+};
+class B{
+    int a2;
+    public:
+        void setValue(int x){
+            a2 = x;
+        }
+        void display(){
+            cout<<"the value of a2 is:  "<<a2<<endl;
+        }
+        friend void swap_value(A & ,B &);
+};
+
+void swap_value(A &x1, B &x2){
+    int temp = x1.a1;
+    x1.a1 = x2.a2;
+    x2.a2 = temp;
+}
+
+int main(){
+    A x1;
+    x1.setValue(5);
+    x1.display();
+    B x2;
+    x2.setValue(10);
+    x2.display();
+    swap_value(x1,x2);
+    x1.display();
+    x2.display();
+
+
+    return 0;
+}
