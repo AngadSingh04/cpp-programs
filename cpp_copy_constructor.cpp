@@ -9,10 +9,11 @@ class Number{
         }
         Number(int x);
         Number(Number &num){
+            cout<<"copy constructor called"<<endl;
             a = num.a;
         }
         void display(){
-            cout<<"copy constructor called"<<endl;
+            
             cout<<"the number is: "<<a<<endl;
         }
 };
