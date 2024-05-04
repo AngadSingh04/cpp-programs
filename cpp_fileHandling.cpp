@@ -4,18 +4,20 @@
 using namespace std;
 
 int main(){
-    // write
-    // string abc = "Hello My Name Is Angad Singh";
-    // ofstream outputFile("cpp_SampleText.txt");
-    // outputFile << abc;
+    string abc;
+    cout<< "Enter your name: ";
+    getline(cin , abc);
 
-    // read
-    // string xyz;
-    // ifstream inputFile("cpp_SampleText2.txt");
-    // // inputFile >> xyz;
-    // getline(inputFile, xyz);
-    // cout << xyz;
+    ofstream outputFile("cpp_SampleText.txt");
+    outputFile << abc + " is my name";
 
+    outputFile.close();
+
+    string xyz;
+    ifstream inputFile("cpp_SampleText.txt");
+    getline(inputFile, xyz);
+    cout << "the content of the file is: " + xyz;
+    inputFile.close();
 
     return 0;
 }
