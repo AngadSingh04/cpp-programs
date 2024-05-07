@@ -10,7 +10,7 @@ int main(){
     catch(out_of_range& e){
         cout<<"Exception: "<<e.what()<<endl;  //Exception: basic_string::at: __n (which is 4) >= this->size() (which is 4)
     }
-    catch(bad_alloc& e){
+    catch(const exception& e){
         cout<<"Second catch: "<<e.what()<<endl; //Second catch: std::bad_alloc
     }
     
