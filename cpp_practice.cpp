@@ -2,6 +2,7 @@
 using namespace std;
 
 int main(){
-    cout<<"hello";
+    cout.put('A')<<endl;;
+    cout.put(65);
     return 0;
 }
